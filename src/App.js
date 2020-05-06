@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import Moment from 'react-moment';
 import socketIOClient from "socket.io-client";
-const socket = socketIOClient("http://localhost:5000");
+const socket = socketIOClient("https://nguyen-chat-app-backend.herokuapp.com/");
 
 function App() {
   const [chat, setChat] = useState("")
@@ -23,7 +23,7 @@ function App() {
     chatConnection()
   }, [])
 
-  
+    
 
   const chatConnection = () => {
     socket.on("message", (msg)=> {
